@@ -1,0 +1,2 @@
+let api =  'https://v6.exchangerate-api.com/v6/ade212f583c5d46279784397/latest/USD';
+let apiKey = "";
