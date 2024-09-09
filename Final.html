@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skywings - Travel</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div id="chatbot">
+        <div class="chatbot-widget">
+            <div class="chatbot-header">
+                <h4>Assistant</h4>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="chatbot-body">
+                <div class="chatbot-messages">
+                    <div class="message bot">Hello! How can I assist you today?</div>
+                </div>
+            </div>
+            <div class="chatbot-footer">
+                <input type="text" placeholder="Type your message..." class="chatbot-input">
+                <button class="mic-btn"><i class="fa fa-microphone"></i></button>
+                <button class="send-btn">Send</button>
+            </div>
+        </div>
+        <button id="chatbot-toggle" class="chatbot-toggle-btn">Chat</button>
+    </div>
+    
+    
+
+    <button class="chatbot-toggle"><i class="fa fa-comment"></i> Chat</button>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Skywings</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#flights">Travel</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero" id="home">
+            <h1>Explore beyond the Horizon!</h1>
+            <div class="search-container">
+                <input type="text" placeholder="Enter a destination" class="search-input">
+                <input type="date" class="search-input">
+                <input type="number" placeholder="Stay days" min="1" class="search-input">
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <button class="book-btn">Book A Flight Now</button>
+    </header>
+    
+    <section class="popular-destinations" id="flights">
+        <h2>Popular Destinations</h2>
+        <div>
+            <h3 class="beach">Beach Destinations</h3>
+        <div class="destination-cards">
+            <div class="card">
+                <img src="goa.jpeg" alt="Destination 1">
+                <p>Relax in Goa</p>
+            </div>
+            <div class="card">
+                <img src="vizag.jpeg" alt="Destination 2">
+                <p>Discover Vizag</p>
+            </div>
+            <div class="card">
+                <img src="gokarna.jpeg" alt="Destination 3">
+                <p>Explore Gokarna </p>
+            </div>
+            <div class="card">
+                <img src="lakshwadeep.jpeg" alt="destination 4">
+                <p>Adventure at Lakshwadeep</p>
+            </div>
+            <div class="card">
+                <img src="chennai.jpeg" alt="destination 5">
+                <p>Soak up Chennai </p>
+            </div>
+        </div>
+        <div>
+            <h3 class="beach">Mountain Destinations</h3>
+        <div class="destination-cards">
+            <div class="card">
+                <img src="shimla.jpeg" alt="Destination 1">
+                <p>Chill at Shimla</p>
+            </div>
+            <div class="card">
+                <img src="ooty.jpeg" alt="Destination 2">
+                <p>Unwind in ooty</p>
+            </div>
+            <div class="card">
+                <img src="munnar.jpeg" alt="Destination 3">
+                <p>Breathe in Munnar</p>
+            </div>
+            <div class="card">
+                <img src="gulmarg.jpeg" alt="destination 4">
+                <p>Ski in Gulmarg</p>
+            </div>
+            <div class="card">
+                <img src="mussoorie.jpeg" alt="destination 5">
+                <p>Cool off in Mussoorie</p>
+            </div>
+        </div>
+        <div>
+            <h3 class="beach">Pilgrim Destinations</h3>
+        <div class="destination-cards">
+            <div class="card">
+                <img src="tirupathi.jpeg" alt="Destination 1">
+                <p>Climb to faith at TIrupathi</p>
+            </div>
+            <div class="card">
+                <img src="kedarnath.jpeg" alt="Destination 2">
+                <p>Touch the Himalays at Kedarnath</p>
+            </div>
+            <div class="card">
+                <img src="dwarakha.jpeg" alt="Destination 3">
+                <p>Discover Divinity in Dwarakha</p>
+            </div>
+            <div class="card">
+                <img src="varnasi.jpeg" alt="destination 4">
+                <p>Connect with Eternity in Varnasi</p>
+            </div>
+            <div class="card">
+                <img src="tiruvannamalai.jpeg" alt="destination 5">
+                <p>Witness Devotion at Tiruvannamalai</p>
+            </div>
+        </div>
+        <div>
+            <h3 class="beach">International Destinations</h3>
+        <div class="destination-cards">
+            <div class="card">
+                <img src="paris.jpeg" alt="Destination 1">
+                <p>City of Light-Paris</p>
+            </div>
+            <div class="card">
+                <img src="japan2.jpeg" alt="Destination 2">
+                <p>Neon Dreams-Japan</p>
+            </div>
+            <div class="card">
+                <img src="dubai.jpeg" alt="Destination 3">
+                <p>City of Gold-Dubai</p>
+            </div>
+            <div class="card">
+                <img src="turkey.jpeg" alt="destination 4">
+                <p>City of Two Continents-Turkey</p>
+            </div>
+            <div class="card">
+                <img src="greece.jpeg" alt="destination 5">
+                <p>Capital of Cool-greece</p>
+            </div>
+        </div>
+    
+    
+    
+
+        </div>
+    </section>
+
+    <section class="journey" id="about">
+        <h2>Journey To The Skies Made Simple!</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1. Find Your Destination</h3>
+            </div>
+            <div class="step">
+                <h3>2. Book a Ticket</h3>
+            </div>
+            <div class="step">
+                <h3>3. Pay & Start Journey</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="promo" id="contact">
+        <img src="footerimg.jpeg" alt="travel">
+        <div class="promo-text">
+            <h2>UNLEASH WANDERLUST WITH SKYWINGS</h2>
+            <p>20% OFF on your next flight!</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Skywings. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
