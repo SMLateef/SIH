@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="app-details">
+            <img src="cur.jpeg" class="app-icon" alt="Currency Converter Icon"/>
+            <h1 class="app-title">Currency Converter</h1>
+        </div>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" value="100" />
+        <div class="dropdowns">
+            <select id="from-currency-select"></select>
+            <select id="to-currency-select"></select>
+        </div>
+        <button id="convert-button">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        // List of currencies
+        const currencies = [
+            "USD", "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", 
+            "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYN", "BZD", 
+            "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", 
+            "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "FOK", "GBP", "GEL", "GGP", "GHS", "GIP", 
+            "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", 
+            "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KID", "KMF", "KRW", 
+            "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LYD", "MAD", "MDL", "MGA", "MKD", 
+            "MMK", "MNT", "MOP", "MRU", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", 
+            "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", 
+            "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLE", "SLL", "SOS", 
+            "SRD", "SSP", "STN", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", 
+            "TWD", "TZS", "UAH", "UGX", "UYU", "UZS", "VES", "VND", "VUV", "WST", "XAF", "XCD", "XDR", 
+            "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWL"
+        ];
+
+        // Populate the 'from-currency-select' and 'to-currency-select' dropdowns
+        const fromCurrencySelect = document.getElementById('from-currency-select');
+        const toCurrencySelect = document.getElementById('to-currency-select');
+
+        currencies.forEach(function(currency) {
+            const optionFrom = document.createElement('option');
+            optionFrom.value = currency;
+            optionFrom.text = currency;
+            fromCurrencySelect.add(optionFrom);
+
+            const optionTo = document.createElement('option');
+            optionTo.value = currency;
+            optionTo.text = currency;
+            toCurrencySelect.add(optionTo);
+        });
+
+        document.getElementById('convert-button').addEventListener('click', function() {
+            const amount = document.getElementById('amount').value;
+            const fromCurrency = fromCurrencySelect.value;
+            const toCurrency = toCurrencySelect.value;
+            const resultElement = document.getElementById('result');
+
+            if (amount && fromCurrency && toCurrency) {
+                // Call a function to perform the conversion
+                convertCurrency(amount, fromCurrency, toCurrency)
+                    .then(result => {
+                        resultElement.textContent = `${amount} ${fromCurrency} = ${result} ${toCurrency}`;
+                    })
+                    .catch(error => {
+                        resultElement.textContent = 'Error: Could not convert currency';
+                        console.error('Conversion Error:', error);
+                    });
+            } else {
+                resultElement.textContent = 'Please fill in all fields.';
+            }
+        });
+
+        // Example function to simulate currency conversion
+        function convertCurrency(amount, fromCurrency, toCurrency) {
+            // This should be replaced with a call to your currency conversion API
+            return new Promise((resolve, reject) => {
+                // Simulated conversion rate for demonstration purposes
+                const conversionRates = {
+                    'USD': 1,
+                    'EUR': 0.85,
+                    'JPY': 110,
+                    'GBP': 0.75
+                };
+
+                if (conversionRates[fromCurrency] && conversionRates[toCurrency]) {
+                    const convertedAmount = (amount * (conversionRates[toCurrency] / conversionRates[fromCurrency])).toFixed(2);
+                    resolve(convertedAmount);
+                } else {
+                    reject('Currency not supported');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
